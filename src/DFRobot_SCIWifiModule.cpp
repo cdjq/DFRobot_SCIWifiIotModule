@@ -15,13 +15,13 @@
     _pWire->begin();
  }
 
-//  uint8_t DFRobot_SCIWifiModule::begin(void){
+ uint8_t DFRobot_SCIWifiModule::begin(void){
     
-//     _pWire->beginTransmission(_addr);
-//     if(_pWire->endTransmission() != 0)
-//         return 1;
-//     return 0;
-//  }
+    _pWire->beginTransmission(_addr);
+    if(_pWire->endTransmission() != 0)
+        return 0;
+    return 1;
+ }
 
 
  void DFRobot_SCIWifiModule::configWfif(String name, String pwd){

@@ -31,14 +31,14 @@ public:
     */
     DFRobot_SCIWifiModule(TwoWire *pWire = &Wire);
     ~DFRobot_SCIWifiModule(){};
-    // /**
-    //  * @fn befin
-    //  * @brief 初始化 sci wifi 模块
-    //  * @return 返回初始化状态
-    //  * @retval 0 初始化失败
-    //  * @retval 1 初始化成功
-    // */
-    // uint8_t begin(void);
+    /**
+     * @fn befin
+     * @brief 初始化 sci wifi 模块
+     * @return 返回初始化状态
+     * @retval 0 初始化失败
+     * @retval 1 初始化成功
+    */
+    uint8_t begin(void);
     /**
      * @fn configWfif
      * @brief 配置WiFi
