@@ -26,22 +26,22 @@
 
  void DFRobot_SCIWifiModule::configWfif(String name, String pwd){
     String sendData = name + ":" + pwd;
-    writeReg(CMD_WIFICONFIG,sendData.c_str(),strlen(sendData.c_str()));
+    writeReg(CMD_WIFICONFIG,(uint8_t*)sendData.c_str(),strlen(sendData.c_str()));
  }
 
 void DFRobot_SCIWifiModule::configMqtt1(String iot,String qos){
     String sendData = iot + ":" + qos;
-    writeReg(CMD_IOTCONFIG,sendData.c_str(),strlen(sendData.c_str()));
+    writeReg(CMD_IOTCONFIG,(uint8_t*)sendData.c_str(),strlen(sendData.c_str()));
  }
 
 void DFRobot_SCIWifiModule::configMqtt2(String name,String pwd){
     String sendData = name + ":" + pwd;
-    writeReg(CMD_MQTTCONFIG,sendData.c_str(),strlen(sendData.c_str()));
+    writeReg(CMD_MQTTCONFIG,(uint8_t*)sendData.c_str(),strlen(sendData.c_str()));
   }
 
 void DFRobot_SCIWifiModule::configTopic(String count,String top){
     String sendData = count + ":" + top;
-    writeReg(CMD_TOPICCONFIG,sendData.c_str(),strlen(sendData.c_str()));
+    writeReg(CMD_TOPICCONFIG,(uint8_t*)sendData.c_str(),strlen(sendData.c_str()));
 }
 
 void DFRobot_SCIWifiModule::cleanConfig(void){
