@@ -34,13 +34,13 @@ TEL0180 是SCI的WiFi扩展模块，能够通过I2C进行网络配置，配置�
 
 ```C++
   /**
-     * @fn configWfif
+     * @fn configWifi
      * @brief 配置WiFi
      * @param name wifi 名称
      * @param pwd wifi 密码
      * 
     */
-    void configWfif(String name, String pwd);
+    void configWifi(String name, String pwd);
     /**
      * @fn configMqtt1
      * @brief MQTT配置1

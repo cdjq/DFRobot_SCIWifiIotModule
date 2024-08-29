@@ -40,13 +40,13 @@ public:
     */
     uint8_t begin(void);
     /**
-     * @fn configWfif
+     * @fn configWifi
      * @brief 配置WiFi
      * @param name wifi 名称
      * @param pwd wifi 密码
      * 
     */
-    void configWfif(String name, String pwd);
+    void configWifi(String name, String pwd);
     /**
      * @fn configMqtt1
      * @brief MQTT配置1

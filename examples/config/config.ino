@@ -10,7 +10,7 @@ void setup(){
     }
     // wifi.cleanConfig();
     // delay(100);
-    wifi.configWfif("dfrobotOffice","dfrobot2011");
+    wifi.configWifi("dfrobotOffice","dfrobot2011");
     delay(100);
     wifi.configMqtt1("iot.dfrobot.com.cn","0");
     delay(100);

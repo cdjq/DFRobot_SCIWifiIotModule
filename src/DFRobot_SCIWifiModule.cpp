@@ -24,7 +24,7 @@
  }
 
 
- void DFRobot_SCIWifiModule::configWfif(String name, String pwd){
+ void DFRobot_SCIWifiModule::configWifi(String name, String pwd){
     String sendData = name + ":" + pwd;
     writeReg(CMD_WIFICONFIG,(uint8_t*)sendData.c_str(),strlen(sendData.c_str()));
  }
