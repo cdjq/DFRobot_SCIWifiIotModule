@@ -1,13 +1,13 @@
 # -*- coding:utf-8 -*-
 '''!
   @file DFRobot_sci_wifi_module.py
-  @brief 这是一个sci wifi 扩展模块的库
-  @copyright   Copyright (c) 2021 DFRobot Co.Ltd (http://www.dfrobot.com)
+  @brief This is a library for the SCI WiFi expansion module
+  @copyright   Copyright (c) 2021 DFRobot Co. Ltd (http://www.dfrobot.com)
   @license     The MIT License (MIT)
-  @author      TangJie(jie.tang@dfrobot.com)
+  @author      TangJie (jie.tang@dfrobot.com)
   @version     V1.0
   @date        2024-03-15
-  @url https://github.com/DFRobot/DFRobot_SCIWifiModule
+  @url         https://github.com/DFRobot/DFRobot_SCIWifiModule
 '''
 
 
@@ -18,12 +18,12 @@ import math
 import RPi.GPIO as GPIO
 import math
 
-CMD_WIFICONFIG      =0x00 #wifi配置
-CMD_IOTCONFIG       =0x01 #iot平台配置
-CMD_MQTTCONFIG      =0x02 #mqtt配置
-CMD_TOPICCONFIG     =0x03 #主题配置
-CMD_SENDEND         =0x04 #传输完成
-CMD_RMOVEFILD       =0x05  #清楚全部配置
+CMD_WIFICONFIG      =0x00 #wifi configuration
+CMD_IOTCONFIG       =0x01 #IoT platform configuration
+CMD_MQTTCONFIG      =0x02 #mqtt configuration
+CMD_TOPICCONFIG     =0x03 #Topic configuration
+CMD_SENDEND         =0x04 #Transmission complete
+CMD_RMOVEFILD       =0x05 #Clear all configurations
 
 class DFRobot_SCIWifiModule():
     
@@ -34,9 +34,9 @@ class DFRobot_SCIWifiModule():
   def config_wifi(self,name,pwd):
     '''!
       @fn config_wifi
-      @brief 配置WiFi
-      @param name wifi 名称
-      @param pwd wifi 密码
+      @brief Configure WiFi
+      @param name WiFi name
+      @param pwd WiFi password
     '''
     sendData = name + ":" + pwd
     self._write_reg(CMD_WIFICONFIG,sendData)
@@ -45,9 +45,9 @@ class DFRobot_SCIWifiModule():
   def config_mqtt1(self,iot,qos):
     '''!
       @fn config_mqtt1
-      @brief MQTT配置1
-      @param iot 配置IOT平台
-      @param qos qos 配置
+      @brief MQTT Configuration 1
+      @param iot Configure IoT platform
+      @param qos QoS configuration
     '''
     sendData = iot + ":" + qos
     self._write_reg(CMD_IOTCONFIG,sendData)
@@ -56,9 +56,9 @@ class DFRobot_SCIWifiModule():
   def config_mqtt2(self,name,pwd):
     '''!
       @fn config_mqtt2
-      @brief MQTT配置2
-      @param name MQTT用户名称
-      @param pwd MQTT用户密码
+      @brief MQTT Configuration 2
+      @param name MQTT username
+      @param pwd MQTT user password
     '''
     sendData = name + ":" + pwd
     self._write_reg(CMD_MQTTCONFIG,sendData)
@@ -66,10 +66,10 @@ class DFRobot_SCIWifiModule():
 
   def confing_topic(self,count,top):
     '''!
-      @fn confing_topic
-      @brief 订阅主题
-      @param count 主题标号
-      @param top 主题
+      @fn config_topic
+      @brief Subscribe to a topic
+      @param count Topic index
+      @param top Topic
     '''
     sendData = count + ":" + top
     self._write_reg(CMD_TOPICCONFIG,sendData)
@@ -78,7 +78,7 @@ class DFRobot_SCIWifiModule():
   def end_config(self):
     '''!
       @fn end_config
-      @brief 数据传输完成
+      @brief Data transmission complete
     '''
     self.write_byte(CMD_SENDEND,0)
     time.sleep(0.1)
@@ -86,7 +86,7 @@ class DFRobot_SCIWifiModule():
   def clean_config(self):
     '''!
       @fn clean_config
-      @brief 删除全部配置
+      @brief Delete all configurations
     '''
     self.write_byte(CMD_RMOVEFILD,0)
     time.sleep(0.1)

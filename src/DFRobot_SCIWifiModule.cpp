@@ -1,6 +1,6 @@
 /*!
  * @file  DFRobot_SCIWifiModule.cpp
- * @brief 这是SCI wifi 扩展模块的库的实现
+ * @brief  This is the implementation of the SCI WiFi expansion module library
  * @copyright	Copyright (c) 2021 DFRobot Co. Ltd (http://www.dfrobot.com)
  * @license   The MIT License (MIT)
  * @author    [TangJie](jie.tang@dfrobot.com)

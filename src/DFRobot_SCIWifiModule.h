@@ -1,6 +1,6 @@
 /*!
  * @file  DFRobot_SCIWifiModule.h
- * @brief 这是SCI wifi 扩展模块的库的声明
+ * @brief This is the library declaration for the SCI WiFi expansion module
  * @copyright	Copyright (c) 2021 DFRobot Co. Ltd (http://www.dfrobot.com)
  * @license   The MIT License (MIT)
  * @author    [TangJie](jie.tang@dfrobot.com)
@@ -14,69 +14,68 @@
 #include "Wire.h"
 
 
-#define CMD_WIFICONFIG      0x00///<wifi配置
-#define CMD_IOTCONFIG       0x01///<iot平台配置
-#define CMD_MQTTCONFIG      0x02///<mqtt配置
-#define CMD_TOPICCONFIG     0x03///<主题配置
-#define CMD_SENDEND         0x04///<传输完成
-#define CMD_RMOVEFILD       0x05 ///<清楚全部配置
+#define CMD_WIFICONFIG      0x00///<wifi configuration
+#define CMD_IOTCONFIG       0x01///<IoT platform configuration
+#define CMD_MQTTCONFIG      0x02///<mqtt configuration
+#define CMD_TOPICCONFIG     0x03///<Topic configuration
+#define CMD_SENDEND         0x04///<Transmission complete
+#define CMD_RMOVEFILD       0x05 ///<Clear all configurations
 
 class DFRobot_SCIWifiModule{
 
 public:
     /**
      * @fn DFRobot_SCIWifiModule
-     * @brief sci wifi 模块构造函数
-     * @param pWire I2C pointer to the TowWire stream, which requires calling begin in the demo to init Arduino I2C config.
+     * @brief Constructor for the SCI WiFi module
+     * @param pWire Pointer to the I2C `TwoWire` stream, which requires calling `begin` in the setup to initialize Arduino I2C configuration.
     */
     DFRobot_SCIWifiModule(TwoWire *pWire = &Wire);
     ~DFRobot_SCIWifiModule(){};
     /**
-     * @fn befin
-     * @brief 初始化 sci wifi 模块
-     * @return 返回初始化状态
-     * @retval 0 初始化失败
-     * @retval 1 初始化成功
+     * @fn begin
+     * @brief Initialize the SCI WiFi module
+     * @return Initialization status
+     * @retval 0 Initialization failed
+     * @retval 1 Initialization succeeded
     */
     uint8_t begin(void);
     /**
      * @fn configWifi
-     * @brief 配置WiFi
-     * @param name wifi 名称
-     * @param pwd wifi 密码
-     * 
+     * @brief Configure WiFi
+     * @param name WiFi name
+     * @param pwd WiFi password
     */
     void configWifi(String name, String pwd);
     /**
      * @fn configMqtt1
-     * @brief MQTT配置1
-     * @param iot 配置IOT平台
-     * @param qos qos 配置
+     * @brief MQTT configuration 1
+     * @param iot Configure IoT platform
+     * @param qos QoS configuration
     */
     void configMqtt1(String iot,String qos);
     /**
      * @fn configMqtt2
-     * @brief MQTT配置2
-     * @param name MQTT用户名称
-     * @param pwd MQTT用户密码
+     * @brief MQTT configuration 2
+     * @param name MQTT username
+     * @param pwd MQTT user password
     */
     void configMqtt2(String name,String pwd);
     /**
      * @fn configTopic
-     * @brief 订阅主题
-     * @param count 主题标号
-     * @param top 主题
+     * @brief Subscribe to a topic
+     * @param count Topic index
+     * @param top Topic
     */
     void configTopic(String count,String top);
     /**
      * @fn delayConfig
-     * @brief 删除全部配置
+     * @brief Delete all configurations
     */
     void cleanConfig(void);
 
     /**
      * @fn endConfig
-     * @brief 数据传输完成
+     * @brief Data transmission complete
     */
 
     void endConfig(void);

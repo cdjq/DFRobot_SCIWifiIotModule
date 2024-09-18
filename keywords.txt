@@ -1,0 +1,33 @@
+
+#######################################
+# Syntax Map For DFRobot_SCIWifiModule
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+DFRobot_SCIWifiModule	KEYWORD1
+
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+configWifi	KEYWORD2
+configMqtt1	KEYWORD2
+configMqtt2	KEYWORD2
+configTopic	KEYWORD2
+endConfig	KEYWORD2
+
+
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
