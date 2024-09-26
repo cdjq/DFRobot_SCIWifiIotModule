@@ -2,7 +2,7 @@
 '''!
   @file DFRobot_sci_wifi_module.py
   @brief This is a library for the SCI WiFi expansion module
-  @copyright   Copyright (c) 2021 DFRobot Co. Ltd (http://www.dfrobot.com)
+  @copyright   Copyright (c) 2024 DFRobot Co. Ltd (http://www.dfrobot.com)
   @license     The MIT License (MIT)
   @author      TangJie (jie.tang@dfrobot.com)
   @version     V1.0
@@ -97,6 +97,8 @@ class DFRobot_SCIWifiModule():
       @brief write the data from the register
       @param reg_addr register address
       @param data Data written to register 
+      @retval 1 succes
+      @retval 0 error
     '''
     try:
       data = [ord(c) for c in string]

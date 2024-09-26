@@ -14,7 +14,7 @@ TEL0180 is an SCI WiFi expansion module that can configure the network via I2C. 
 ## 目录
 
   * [Overview](#Overview)
-  * [Library Installation](#Library Installation)
+  * [LibraryInstallation](#Library Installation)
   * [Methods](#Methods)
   * [Compatibility](#Compatibility)
   * [History](#History)
@@ -86,10 +86,8 @@ MCU                | Work Well    | Work Wrong   | Untested    | Remarks
 ------------------ | :----------: | :----------: | :---------: | :----:
 Arduino Uno        |      √       |              |             |
 Arduino MEGA2560   |      √       |              |             |
-Arduino Leonardo   |      √       |              |             |
 FireBeetle-ESP8266 |      √       |              |             |
 FireBeetle-ESP32   |      √       |              |             |
-FireBeetle-M0      |      √       |              |             |
 Micro:bit          |      √       |              |             |
 
 

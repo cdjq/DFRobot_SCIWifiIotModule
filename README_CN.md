@@ -82,10 +82,8 @@ MCU                | Work Well    | Work Wrong   | Untested    | Remarks
 ------------------ | :----------: | :----------: | :---------: | :----:
 Arduino Uno        |      √       |              |             |
 Arduino MEGA2560   |      √       |              |             |
-Arduino Leonardo   |      √       |              |             |
 FireBeetle-ESP8266 |      √       |              |             |
 FireBeetle-ESP32   |      √       |              |             |
-FireBeetle-M0      |      √       |              |             |
 Micro:bit          |      √       |              |             |
 
 

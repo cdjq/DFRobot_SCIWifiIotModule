@@ -1,7 +1,7 @@
 /*!
  * @file config.ino
  * @brief This is a demo for configuring the SCI WiFi module; running the demo will configure the SCI WiFi module.
- * @copyright   Copyright (c) 2021 DFRobot Co. Ltd (http://www.dfrobot.com)
+ * @copyright   Copyright (c) 2024 DFRobot Co. Ltd (http://www.dfrobot.com)
  * @license     The MIT License (MIT)
  * @author      [TangJie](jie.tang@dfrobot.com)
  * @version     V1.0
@@ -18,6 +18,8 @@ void setup(){
         Serial.println("sci wifi module connect error!!");
         delay(1000);
     }
+    wifi.cleanConfig();
+    delay(100);
     wifi.configWifi("dfrobotOffice","dfrobot2011");
     delay(100);
     wifi.configMqtt1("iot.dfrobot.com.cn","0");

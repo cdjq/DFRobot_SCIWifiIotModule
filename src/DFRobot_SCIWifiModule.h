@@ -1,7 +1,7 @@
 /*!
  * @file  DFRobot_SCIWifiModule.h
  * @brief This is the library declaration for the SCI WiFi expansion module
- * @copyright	Copyright (c) 2021 DFRobot Co. Ltd (http://www.dfrobot.com)
+ * @copyright	Copyright (c) 2024 DFRobot Co. Ltd (http://www.dfrobot.com)
  * @license   The MIT License (MIT)
  * @author    [TangJie](jie.tang@dfrobot.com)
  * @version   V1.0

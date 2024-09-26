@@ -1,7 +1,7 @@
 /*!
  * @file  DFRobot_SCIWifiModule.cpp
  * @brief  This is the implementation of the SCI WiFi expansion module library
- * @copyright	Copyright (c) 2021 DFRobot Co. Ltd (http://www.dfrobot.com)
+ * @copyright	Copyright (c) 2024 DFRobot Co. Ltd (http://www.dfrobot.com)
  * @license   The MIT License (MIT)
  * @author    [TangJie](jie.tang@dfrobot.com)
  * @version   V1.0
@@ -10,13 +10,15 @@
  */
 #include "DFRobot_SCIWifiModule.h"
 
- DFRobot_SCIWifiModule::DFRobot_SCIWifiModule(TwoWire *pWire){
+ DFRobot_SCIWifiModule::DFRobot_SCIWifiModule(TwoWire *pWire)
+ {
     _pWire = pWire;
-    _pWire->begin();
+    
  }
 
- uint8_t DFRobot_SCIWifiModule::begin(void){
-    
+ uint8_t DFRobot_SCIWifiModule::begin(void)
+ {
+    _pWire->begin();
     _pWire->beginTransmission(_addr);
     if(_pWire->endTransmission() != 0)
         return 0;
@@ -24,38 +26,44 @@
  }
 
 
- void DFRobot_SCIWifiModule::configWifi(String name, String pwd){
+ void DFRobot_SCIWifiModule::configWifi(String name, String pwd)
+ {
     String sendData = name + ":" + pwd;
     writeReg(CMD_WIFICONFIG,(uint8_t*)sendData.c_str(),strlen(sendData.c_str()));
  }
 
-void DFRobot_SCIWifiModule::configMqtt1(String iot,String qos){
+void DFRobot_SCIWifiModule::configMqtt1(String iot,String qos)
+{
     String sendData = iot + ":" + qos;
     writeReg(CMD_IOTCONFIG,(uint8_t*)sendData.c_str(),strlen(sendData.c_str()));
  }
 
-void DFRobot_SCIWifiModule::configMqtt2(String name,String pwd){
+void DFRobot_SCIWifiModule::configMqtt2(String name,String pwd)
+{
     String sendData = name + ":" + pwd;
     writeReg(CMD_MQTTCONFIG,(uint8_t*)sendData.c_str(),strlen(sendData.c_str()));
-  }
+}
 
-void DFRobot_SCIWifiModule::configTopic(String count,String top){
+void DFRobot_SCIWifiModule::configTopic(String count,String top)
+{
     String sendData = count + ":" + top;
     writeReg(CMD_TOPICCONFIG,(uint8_t*)sendData.c_str(),strlen(sendData.c_str()));
 }
 
-void DFRobot_SCIWifiModule::cleanConfig(void){
+void DFRobot_SCIWifiModule::cleanConfig(void)
+{
     _pWire->beginTransmission(_addr);
     _pWire->write(CMD_RMOVEFILD);
     _pWire->endTransmission();
 
 }
 
-void DFRobot_SCIWifiModule::endConfig(void){
+void DFRobot_SCIWifiModule::endConfig(void)
+{
     _pWire->beginTransmission(_addr);
     _pWire->write(CMD_SENDEND);
     _pWire->endTransmission();
-  }
+}
 
 uint8_t DFRobot_SCIWifiModule::writeReg(uint8_t reg, void *pBuf, size_t size)
 {

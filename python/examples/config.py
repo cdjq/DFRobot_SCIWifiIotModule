@@ -1,7 +1,7 @@
 '''!
   @file  config.py
   @brief This is a demo for configuring the SCI WiFi module; running the demo will configure the SCI WiFi module.
-  @copyright   Copyright (c) 2021 DFRobot Co.Ltd (http://www.dfrobot.com)
+  @copyright   Copyright (c) 2024 DFRobot Co.Ltd (http://www.dfrobot.com)
   @license     The MIT License (MIT)
   @author      TangJie(jie.tang@dfrobot.com)
   @version     V1.0
@@ -20,6 +20,9 @@ from DFRobot_sci_wifi_module import *
 wifi = DFRobot_SCIWifiModule(1)
 
 def setup():
+  time.sleep(0.1)
+  wifi.clean_config()
+  time.sleep(0.1)
   wifi.config_wifi("aaa","dddd")
   time.sleep(0.1)
   wifi.config_mqtt1("iot.dfrobot.com","0")
