@@ -14,7 +14,7 @@ TEL0180 is an SCI WiFi expansion module that can configure the network via I2C. 
 ## 目录
 
   * [Overview](#Overview)
-  * [LibraryInstallation](#Library Installation)
+  * [Installation](#Installation)
   * [Methods](#Methods)
   * [Compatibility](#Compatibility)
   * [History](#History)
@@ -26,7 +26,7 @@ TEL0180 is an SCI WiFi expansion module that can configure the network via I2C. 
 * Network configuration can be done via I2C.
 * SCI data can be obtained via I2C.
 
-## Library Installation
+## Installation
 
 Before using this library, please download the library file first, paste it into the \\Arduino\\libraries directory, then open the examples folder and run the demo within.
 
